@@ -1,13 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 
 import { widths } from '../styles/variables';
 import { getEmSize } from '../styles/mixins';
 
 const StyledContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  height: 500px;
   width: auto;
   max-width: ${getEmSize(widths.lg)}em;
 `;

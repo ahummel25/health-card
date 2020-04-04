@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'gatsby-starter-typescript-plus',
-    description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
+    description:
+      'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
     keywords: 'gatsbyjs, gatsby, javascript, sample, something',
     siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
     author: {
@@ -55,4 +56,4 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet'
   ]
-}
+};

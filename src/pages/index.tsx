@@ -1,14 +1,16 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
+import React from 'react';
 
 import Page from '../components/Page';
 import Container from '../components/Container';
+import HealthCard from '../components/HealthCard';
 import IndexLayout from '../layouts';
 
-const IndexPage = () => (
+const IndexPage = (): JSX.Element => (
   <IndexLayout>
     <Page>
-      <Container></Container>
+      <Container>
+        <HealthCard />
+      </Container>
     </Page>
   </IndexLayout>
 );

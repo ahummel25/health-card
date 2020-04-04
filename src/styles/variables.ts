@@ -1,24 +1,25 @@
 /* eslint-disable max-len */
 
 export const colors = {
-  brand: '#663399',
-  lilac: '#9d7cbf',
-  accent: '#ffb238',
-  success: '#37b635',
-  warning: '#ec1818',
+  brand: 'rgb(102, 51, 153)',
+  cardColor: 'rgb(32, 83, 177)',
+  lilac: 'rgb(157, 124, 191)',
+  accent: 'rgb(255, 178, 56)',
+  success: 'rgb(55, 182, 53)',
+  warning: 'rgb(236, 24, 24)',
   ui: {
-    bright: '#e0d6eb',
-    light: '#f5f3f7',
-    whisper: '#fbfafc'
+    bright: 'rgb(224, 214, 235)',
+    light: 'rgb(245, 243, 247)',
+    whisper: 'rgb(251, 250, 252)'
   },
-  code: '#fcf6f0',
+  code: 'rgb(252, 246, 240)',
   gray: {
     dark: 'hsla(270, 17.119554496%, 0%, 0.92)',
     copy: 'hsla(270, 15.797828016000002%, 0%, 0.88)',
     calm: 'rgba(0, 0, 0, 0.54)'
   },
-  white: '#fff',
-  black: '#000'
+  white: 'rgb(255, 255, 255)',
+  black: 'rgb(0, 0, 0)'
 };
 
 export const fonts = {

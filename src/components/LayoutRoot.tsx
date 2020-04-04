@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Global, css } from '@emotion/core';
+import React from 'react';
+import { Global, css, SerializedStyles } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import normalize from '../styles/normalize';
@@ -16,7 +16,7 @@ interface LayoutRootProps {
 
 const LayoutRoot: React.FC<LayoutRootProps> = ({ children, className }) => (
   <>
-    <Global styles={() => css(normalize)} />
+    <Global styles={(): SerializedStyles => css(normalize)} />
     <StyledLayoutRoot className={className}>{children}</StyledLayoutRoot>
   </>
 );
