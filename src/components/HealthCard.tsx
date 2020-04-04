@@ -3,12 +3,12 @@ import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 
 import { useGetImages } from '../hooks';
-import { IHealthCard } from '../interfaces';
+import { IHealthCard, IRotateDirection } from '../interfaces';
 import { fonts } from '../styles/variables';
 
 import RxInfo from './Rx';
 
-const HealthCardContainer = styled.div`
+const HealthCardContainer = styled.div<IRotateDirection>`
   color: white;
   position: absolute;
   -webkit-perspective: 1000px;
@@ -18,7 +18,7 @@ const HealthCardContainer = styled.div`
   margin: 0 auto;
   background: inherit;
 
-  @keyframes flip-card-keyframe {
+  @keyframes clockwiseSpin {
     from {
       transform: rotateY(0deg);
     }
@@ -27,8 +27,17 @@ const HealthCardContainer = styled.div`
     }
   }
 
+  @keyframes antiClockwiseSpin {
+    from {
+      transform: rotateY(360deg);
+    }
+    to {
+      transform: rotateY(0deg);
+    }
+  }
+
   .is-flipping {
-    animation: flip-card-keyframe 0.5s ease-in-out;
+    animation: ${(props): string => props.direction} 0.5s ease-in-out;
   }
 
   .box-shadow {
@@ -80,7 +89,7 @@ const CardFront = styled.div`
     opacity: 0.5 !important;
 
     .number {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 `;
@@ -107,7 +116,9 @@ const HealthCard: FC<IHealthCard> = ({ memberId }): JSX.Element => {
   const { asclepiusImg } = useGetImages();
 
   return (
-    <HealthCardContainer>
+    <HealthCardContainer
+      direction={showBack ? 'clockwiseSpin' : 'antiClockwiseSpin'}
+    >
       <HealthCardMain
         className={isFlipping ? 'is-flipping' : 'box-shadow'}
         onClick={(): void => {
