@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-typescript-plus",
+  "name": "health-card",
   "description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
   "version": "1.0.0",
   "private": true,
-  "author": "Resi Respati <resir014@gmail.com>",
+  "author": "Andrew Hummel <ahummel25@gmail.com>",
   "keywords": [
     "gatsby"
   ],
@@ -22,7 +22,7 @@
     "type-check": "tsc"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=12.0.0"
   },
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -34,7 +34,9 @@
     "gatsby": "^2.10.0",
     "gatsby-image": "^2.2.1",
     "gatsby-plugin-canonical-urls": "^2.1.0",
-    "gatsby-plugin-emotion": "^4.1.0",
+    "gatsby-plugin-emotion": "^4.2.1",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.1.0",
     "gatsby-plugin-sharp": "^2.2.1",
     "gatsby-plugin-typescript": "^2.1.0",

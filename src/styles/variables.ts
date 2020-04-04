@@ -23,6 +23,8 @@ export const colors = {
 };
 
 export const fonts = {
+  bitstream: 'Bitstream Vera Sans Mono, Consolas, Courier, monospace',
+  helvetica: 'Helvetica Neue',
   sansSerif:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
   serif: 'Georgia, "Times New Roman", Times, serif',

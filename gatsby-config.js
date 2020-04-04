@@ -1,17 +1,29 @@
 module.exports = {
   siteMetadata: {
-    title: 'gatsby-starter-typescript-plus',
+    title: 'My Health Card',
     description:
       'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
     keywords: 'gatsbyjs, gatsby, javascript, sample, something',
     siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
     author: {
-      name: 'Resi Respati',
-      url: 'https://twitter.com/resir014',
-      email: 'resir014@gmail.com'
+      name: 'Andrew Hummel',
+      email: 'ahummel25@gmail.com'
     }
   },
+  pathPrefix: '/health-card',
   plugins: [
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Health Card App',
+        short_name: 'Health Card',
+        start_url: '/',
+        background_color: '#2053B1',
+        theme_color: '#2053B1',
+        display: 'standalone',
+        icon: `${__dirname}/src/images/asclepius-pwa.png`
+      }
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -51,6 +63,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-emotion',
+    'gatsby-plugin-offline',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
