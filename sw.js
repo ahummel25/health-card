@@ -27,17 +27,17 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-b3d48adc7a4f63360859.js"
+    "url": "webpack-runtime-fe4732f3128a4f2db4e0.js"
   },
   {
     "url": "framework-d4b23c820857b16d359a.js"
   },
   {
-    "url": "app-5a0fa00b04fb69f5b366.js"
+    "url": "app-703486a13362e8bcc882.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "4a7433a04460c6f9f30a121bfcbf0b0d"
+    "revision": "f05206ac0e4be312ec3367231ec9056b"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-8dc5b1de7df84c955e11.js"
@@ -48,7 +48,7 @@ self.__precacheManifest = [
   },
   {
     "url": "page-data/app-data.json",
-    "revision": "3aa0c92a4d4503a2148ff85ef67d1546"
+    "revision": "5e3d930896d33327211442cc3bbcad5b"
   },
   {
     "url": "manifest.webmanifest",
@@ -145,7 +145,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/health-card/app-5a0fa00b04fb69f5b366.js`))) {
+  if (!resources || !(await caches.match(`/health-card/app-703486a13362e8bcc882.js`))) {
     return await fetch(event.request)
   }
 
