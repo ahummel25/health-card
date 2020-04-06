@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useRef, useState } from 'react';
 import styled from '@emotion/styled';
 import Img from 'gatsby-image';
 
@@ -11,7 +11,6 @@ import RxInfo from './Rx';
 const HealthCardContainer = styled.div<IRotateDirection>`
   color: white;
   position: absolute;
-  -webkit-perspective: 1000px;
   perspective: 1000px;
   width: 350px;
   height: 200px;
@@ -113,17 +112,35 @@ const AsclepiusImg = styled(({ ...rest }) => <Img {...rest} />)`
 const HealthCard: FC<IHealthCard> = ({ memberId }): JSX.Element => {
   const [showBack, setShowBack] = useState<boolean>(false);
   const [isFlipping, setIsFlipping] = useState<boolean>(false);
+  const [isFlippingLeft, setIsFlippingLeft] = useState<boolean>(false);
+  const clickRef = useRef<HTMLDivElement>(null);
   const { asclepiusImg } = useGetImages();
+
+  const determineFlipLocation = (
+    event: React.MouseEvent,
+    elOffsetLeft?: number
+  ): void => {
+    const width = window.innerWidth;
+    const eventOffset = event.pageX - (elOffsetLeft || 0);
+
+    if (width / 2 > eventOffset) {
+      setIsFlippingLeft(true);
+    } else {
+      setIsFlippingLeft(false);
+    }
+  };
 
   return (
     <HealthCardContainer
-      direction={showBack ? 'clockwiseSpin' : 'antiClockwiseSpin'}
+      direction={isFlippingLeft ? 'antiClockwiseSpin' : 'clockwiseSpin'}
     >
       <HealthCardMain
+        ref={clickRef}
         className={isFlipping ? 'is-flipping' : 'box-shadow'}
-        onClick={(): void => {
+        onClick={(event: React.MouseEvent): void => {
           setIsFlipping(true);
           setShowBack(!showBack);
+          determineFlipLocation(event, clickRef.current?.offsetLeft);
         }}
         onAnimationEnd={(): void => {
           setIsFlipping(false);

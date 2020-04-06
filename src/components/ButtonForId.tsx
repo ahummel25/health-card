@@ -11,10 +11,11 @@ const ButtonStyled = styled(({ ...rest }) => <Button {...rest} />)`
 
 const ButtonForId: FC<IButtonForId> = ({ setMemberId }): JSX.Element => {
   const handleOnClick = (): void => {
-    const generatedId = new Date()
-      .valueOf()
+    const generatedId = (
+      new Date().valueOf() * Math.floor(Math.random() * 10000000)
+    )
       .toString()
-      .slice(-8);
+      .slice(0, 8);
 
     setMemberId(Number(generatedId));
   };

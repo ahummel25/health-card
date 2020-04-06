@@ -31,15 +31,13 @@ const RxInfoContainer = styled.div`
 
 const RxInfo: FC<{}> = (): JSX.Element => {
   return (
-    <>
-      <RxInfoContainer>
-        <ul>
-          <li>RxBin: 610652</li>
-          <br />
-          <li>RxPCN: 82260000</li>
-        </ul>
-      </RxInfoContainer>
-    </>
+    <RxInfoContainer>
+      <ul>
+        <li>RxBin: 610652</li>
+        <br />
+        <li>RxPCN: 82260000</li>
+      </ul>
+    </RxInfoContainer>
   );
 };
 
