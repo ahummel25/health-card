@@ -26,7 +26,7 @@ const HealthCardContainer = styled.div<IRotateDirection>`
     }
   }
 
-  @keyframes antiClockwiseSpin {
+  @keyframes counterClockwiseSpin {
     from {
       transform: rotateY(360deg);
     }
@@ -132,7 +132,7 @@ const HealthCard: FC<IHealthCard> = ({ memberId }): JSX.Element => {
 
   return (
     <HealthCardContainer
-      direction={isFlippingLeft ? 'antiClockwiseSpin' : 'clockwiseSpin'}
+      direction={isFlippingLeft ? 'counterClockwiseSpin' : 'clockwiseSpin'}
     >
       <HealthCardMain
         ref={clickRef}
